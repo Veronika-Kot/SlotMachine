@@ -1,0 +1,62 @@
+//
+//  SpinButtonGroup.swift
+//  SlotMachineSwiftUI
+//
+//  Created by Veronika Kotckovich on 1/10/20.
+//  Copyright © 2020 centennial. All rights reserved.
+//
+
+import SwiftUI
+
+struct SpinButtonGroup: View {
+    var body: some View {
+        HStack {
+            Button(action: {
+                print("Hello")
+            }){
+                ZStack {
+                    Text("SPIN").font(Font.custom("ff", size: 30.0)).foregroundColor(Color.white)
+                        .shadow(color: Color("DarkRed"), radius: 2, x: 1, y: 1)
+                     .shadow(color: Color("DarkRed"), radius: 3, x: 1, y: 1)
+                    
+                }
+                    .padding(.vertical, 16.0)
+                    .padding(.horizontal, 45.0)
+                    .overlay(
+                        Rectangle()
+                            .fill(LinearGradient(gradient: Gradient(colors: [Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 0.55), Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 0.01)]), startPoint: .top, endPoint: .bottom))
+                            .frame(height: 15.0)
+                        
+                        ,alignment: .top)
+                    .overlay(
+                        Rectangle()
+                            .fill(LinearGradient(gradient: Gradient(colors: [Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 0.55), Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 0.01)]), startPoint: .bottom, endPoint: .top))
+                            .frame(height: 20.0)
+                        ,alignment: .bottom)
+                    
+                    .background(Color("Red"))
+                    .cornerRadius(30)
+            }
+        } .frame(width: 275, height: 70.0)
+            .padding(.top, 10.0)
+            .padding(.leading, 20.0)
+            .padding(.trailing, 10.0)
+            .background(
+                LinearGradient(gradient: Gradient(colors: [Color("DarkSilver"), Color("DarkSilver"), Color("DarkSilver"), Color("DarkSilver"), Color("DarkSilver"),
+                                                           Color("DarkSilver"),Color("Silver")]), startPoint: .top, endPoint: .bottom))
+            .overlay(
+                Rectangle()
+                    .fill(LinearGradient(gradient: Gradient(colors: [Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 0.55), Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 0.01)]), startPoint: .top, endPoint: .bottom))
+                    .frame(height: 15.0)
+                
+                ,alignment: .top)
+            
+            .cornerRadius(250, corners: [.topLeft])
+    }
+}
+
+struct SpinButtonGroup_Previews: PreviewProvider {
+    static var previews: some View {
+        SpinButtonGroup()
+    }
+}

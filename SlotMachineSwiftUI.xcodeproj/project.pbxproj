@@ -13,6 +13,15 @@
 		7B01E25123C7132E00FA77CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B01E25023C7132E00FA77CA /* Assets.xcassets */; };
 		7B01E25423C7132E00FA77CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B01E25323C7132E00FA77CA /* Preview Assets.xcassets */; };
 		7B01E25723C7132E00FA77CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B01E25523C7132E00FA77CA /* LaunchScreen.storyboard */; };
+		7B01E26023C7E16100FA77CA /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B01E25F23C7E16100FA77CA /* PrimaryButton.swift */; };
+		7B01E26323C7E93200FA77CA /* CurrentBet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B01E26223C7E93200FA77CA /* CurrentBet.swift */; };
+		7B01E26823C7F23800FA77CA /* Calculator.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B01E26723C7F22C00FA77CA /* Calculator.ttf */; };
+		7B01E26A23C82B5500FA77CA /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B01E26923C82B5500FA77CA /* RoundedCorner.swift */; };
+		7B01E27323C85B6600FA77CA /* TejaratchiCaps.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B01E27223C85B3200FA77CA /* TejaratchiCaps.ttf */; };
+		7B01E27723C85EDB00FA77CA /* AlphabetFantasie.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B01E27623C85EA400FA77CA /* AlphabetFantasie.ttf */; };
+		7B01E27A23C86BFE00FA77CA /* SpinButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B01E27923C86BFE00FA77CA /* SpinButtonGroup.swift */; };
+		7B01E27C23C884D600FA77CA /* WheelGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B01E27B23C884D600FA77CA /* WheelGroup.swift */; };
+		7B01E27E23C8855700FA77CA /* WheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B01E27D23C8855700FA77CA /* WheelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +33,22 @@
 		7B01E25323C7132E00FA77CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7B01E25623C7132E00FA77CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B01E25823C7132E00FA77CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B01E25F23C7E16100FA77CA /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		7B01E26223C7E93200FA77CA /* CurrentBet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBet.swift; sourceTree = "<group>"; };
+		7B01E26723C7F22C00FA77CA /* Calculator.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calculator.ttf; sourceTree = "<group>"; };
+		7B01E26923C82B5500FA77CA /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		7B01E26B23C85B3100FA77CA /* Tejaratchi Wd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tejaratchi Wd.ttf"; sourceTree = "<group>"; };
+		7B01E26C23C85B3200FA77CA /* Tejaratchi Th Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tejaratchi Th Bold.ttf"; sourceTree = "<group>"; };
+		7B01E26D23C85B3200FA77CA /* Tejaratchi Ex Lefti.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tejaratchi Ex Lefti.ttf"; sourceTree = "<group>"; };
+		7B01E26E23C85B3200FA77CA /* Tejaratchi Ex.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tejaratchi Ex.ttf"; sourceTree = "<group>"; };
+		7B01E26F23C85B3200FA77CA /* Tejaratchi Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tejaratchi Regular.ttf"; sourceTree = "<group>"; };
+		7B01E27023C85B3200FA77CA /* Tejaratchi Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tejaratchi Italic.ttf"; sourceTree = "<group>"; };
+		7B01E27123C85B3200FA77CA /* Tejaratchi Cn.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tejaratchi Cn.ttf"; sourceTree = "<group>"; };
+		7B01E27223C85B3200FA77CA /* TejaratchiCaps.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TejaratchiCaps.ttf; sourceTree = "<group>"; };
+		7B01E27623C85EA400FA77CA /* AlphabetFantasie.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AlphabetFantasie.ttf; sourceTree = "<group>"; };
+		7B01E27923C86BFE00FA77CA /* SpinButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinButtonGroup.swift; sourceTree = "<group>"; };
+		7B01E27B23C884D600FA77CA /* WheelGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelGroup.swift; sourceTree = "<group>"; };
+		7B01E27D23C8855700FA77CA /* WheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +81,9 @@
 		7B01E24923C7132C00FA77CA /* SlotMachineSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				7B01E26423C7F00300FA77CA /* fonts */,
+				7B01E26123C7E8F900FA77CA /* ButtonGroups */,
+				7B01E25E23C7E12800FA77CA /* New Group */,
 				7B01E24A23C7132C00FA77CA /* AppDelegate.swift */,
 				7B01E24C23C7132C00FA77CA /* SceneDelegate.swift */,
 				7B01E24E23C7132C00FA77CA /* ContentView.swift */,
@@ -73,6 +101,43 @@
 				7B01E25323C7132E00FA77CA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7B01E25E23C7E12800FA77CA /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				7B01E25F23C7E16100FA77CA /* PrimaryButton.swift */,
+				7B01E26923C82B5500FA77CA /* RoundedCorner.swift */,
+				7B01E27D23C8855700FA77CA /* WheelView.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		7B01E26123C7E8F900FA77CA /* ButtonGroups */ = {
+			isa = PBXGroup;
+			children = (
+				7B01E26223C7E93200FA77CA /* CurrentBet.swift */,
+				7B01E27923C86BFE00FA77CA /* SpinButtonGroup.swift */,
+				7B01E27B23C884D600FA77CA /* WheelGroup.swift */,
+			);
+			path = ButtonGroups;
+			sourceTree = "<group>";
+		};
+		7B01E26423C7F00300FA77CA /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7B01E27623C85EA400FA77CA /* AlphabetFantasie.ttf */,
+				7B01E27123C85B3200FA77CA /* Tejaratchi Cn.ttf */,
+				7B01E26D23C85B3200FA77CA /* Tejaratchi Ex Lefti.ttf */,
+				7B01E26E23C85B3200FA77CA /* Tejaratchi Ex.ttf */,
+				7B01E27023C85B3200FA77CA /* Tejaratchi Italic.ttf */,
+				7B01E26F23C85B3200FA77CA /* Tejaratchi Regular.ttf */,
+				7B01E26C23C85B3200FA77CA /* Tejaratchi Th Bold.ttf */,
+				7B01E26B23C85B3100FA77CA /* Tejaratchi Wd.ttf */,
+				7B01E27223C85B3200FA77CA /* TejaratchiCaps.ttf */,
+				7B01E26723C7F22C00FA77CA /* Calculator.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,8 +198,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B01E26823C7F23800FA77CA /* Calculator.ttf in Resources */,
+				7B01E27723C85EDB00FA77CA /* AlphabetFantasie.ttf in Resources */,
 				7B01E25723C7132E00FA77CA /* LaunchScreen.storyboard in Resources */,
 				7B01E25423C7132E00FA77CA /* Preview Assets.xcassets in Resources */,
+				7B01E27323C85B6600FA77CA /* TejaratchiCaps.ttf in Resources */,
 				7B01E25123C7132E00FA77CA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,8 +214,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B01E26A23C82B5500FA77CA /* RoundedCorner.swift in Sources */,
+				7B01E27A23C86BFE00FA77CA /* SpinButtonGroup.swift in Sources */,
 				7B01E24B23C7132C00FA77CA /* AppDelegate.swift in Sources */,
+				7B01E26323C7E93200FA77CA /* CurrentBet.swift in Sources */,
 				7B01E24D23C7132C00FA77CA /* SceneDelegate.swift in Sources */,
+				7B01E27C23C884D600FA77CA /* WheelGroup.swift in Sources */,
+				7B01E27E23C8855700FA77CA /* WheelView.swift in Sources */,
+				7B01E26023C7E16100FA77CA /* PrimaryButton.swift in Sources */,
 				7B01E24F23C7132C00FA77CA /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
