@@ -12,17 +12,55 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color("Silver"), Color("Silver"), Color("DarkSilver"), Color("DarkSilver"), Color("DarkSilver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"),  Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver")]), startPoint: .bottom, endPoint: .top).edgesIgnoringSafeArea(.all)
+            
+            
             VStack(spacing: -35) {
+                HStack(){
+                    Spacer()
+                    Text("Top Bar Menu")
+                    Spacer()
+                }.frame(height: 40).background(Color.blue).zIndex(2)
+                    .edgesIgnoringSafeArea(.all)
+                
+                HStack(){
+                    Text("")
+                        .frame(minWidth: 0,  maxWidth: 30, minHeight: 45,
+                               maxHeight: .infinity)
+                        .background(Color("PrimaryBackground"))
+                        .padding()
+                        .overlay(Rectangle().fill(Color("PrimaryBackground")).frame( width: 10), alignment: .trailing)
+                    
+                    Spacer()
+                    HStack() {
+                        WheelGroup().background(Color.white)
+                    }.padding(45)
+                        .overlay(Rectangle().stroke(Color("LightGold"), lineWidth: 45))
+                        .border(Color("LightGold"), width: 50)
+                    
+                    Text("")
+                        .frame(minWidth: 30,  maxWidth: 30, minHeight: 45,
+                               maxHeight: .infinity, alignment: .trailing)
+                        .background(Color("PrimaryBackground")).padding()
+                        .overlay(Rectangle().fill(Color("PrimaryBackground")).frame( width: 10), alignment: .leading)
+                    
+                    
+                }.offset(y: -10).zIndex(1)
+                    .padding()
+                    .edgesIgnoringSafeArea(.all)
+                    .background(Color("LightGold"))
+                
+                
+                
                 Spacer()
                 Text("")
                     .frame(minWidth: 0, idealWidth: .infinity, maxWidth: 45, minHeight: 45)
                     .background(Color("PrimaryBackground"))
-                    .edgesIgnoringSafeArea(.all)
-                
+
+                    .zIndex(2)
+
                 HStack(spacing: 0) {
                     CurrentBet()
                     //===
-                    
                     VStack(){
                         
                         Text("5000")
@@ -33,7 +71,7 @@ struct ContentView: View {
                         Text("JACKPOT")
                             .font(Font.custom("Calculator", size: 22.0))
                             .foregroundColor(Color.yellow)
-                        .offset(y: -10)
+                            .offset(y: -10)
                         
                     }.frame(minWidth: 0, maxWidth: .infinity, maxHeight: 87)
                         .background(Color("PrimaryBackground"))
@@ -45,7 +83,11 @@ struct ContentView: View {
                     
                     //===
                     SpinButtonGroup()
-                }.edgesIgnoringSafeArea(.all)
+                }
+                .zIndex(3)
+                .edgesIgnoringSafeArea(.all)
+                
+                
             }
         }
     }

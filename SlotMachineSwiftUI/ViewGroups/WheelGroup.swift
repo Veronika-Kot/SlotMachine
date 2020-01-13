@@ -37,19 +37,24 @@ struct WheelGroup: View {
                 WheelView(theWheel: wheelAnimSecond)
                 WheelView(theWheel: wheelAnimThird)
             }.frame(minHeight: 1, maxHeight: 163, alignment: .bottom)
-                .offset(y: 24)
-                .padding(.horizontal, 30)
-                .padding(.top, 38)
-                .padding(.bottom, 20)
+                .offset(y: 30)
+                .padding(.horizontal, 40)
+                .padding(.top, 58)
+                .padding(.bottom, 30)
                 .border(Color.black, width: 30)
-                .padding(10)
-                .border(Color.red, width: 10)
+                .overlay(Rectangle().fill(Color.black).frame(width: 40.0), alignment: .leading)
+                .overlay(Rectangle().fill(Color.black).frame(width: 40.0), alignment: .trailing)
+                .overlay(Image("background-line").resizable().frame(height: 20.0), alignment: .top)
+                .overlay(Image("background-line").resizable().frame(height: 20.0), alignment: .bottom)
+                .overlay(Image("background-line2").resizable().frame(width: 20.0), alignment: .leading)
+                .overlay(Image("background-line2").resizable().frame(width: 20.0), alignment: .trailing)
+            
+        }
         }
     }
-}
-
-struct WheelGroup_Previews: PreviewProvider {
-    static var previews: some View {
-        WheelGroup()
-    }
+    
+    struct WheelGroup_Previews: PreviewProvider {
+        static var previews: some View {
+            WheelGroup()
+        }
 }
