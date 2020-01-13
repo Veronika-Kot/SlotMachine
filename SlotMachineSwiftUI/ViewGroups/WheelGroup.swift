@@ -16,21 +16,21 @@ struct WheelGroup: View {
     
     var body: some View {
         ZStack {
-            VStack {
-                Button(action: {
-                    self.wheelAnimFirst.animate()
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                        self.wheelAnimSecond.animate()
-                    }
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-                        self.wheelAnimThird.animate()
-                    }
-                }){
-                    Text("Animate")
-                }
-            }.zIndex(1)
+//            VStack {
+//                Button(action: {
+//                    self.wheelAnimFirst.animate()
+//                    
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+//                        self.wheelAnimSecond.animate()
+//                    }
+//                    
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+//                        self.wheelAnimThird.animate()
+//                    }
+//                }){
+//                    Text("Animate")
+//                }
+//            }.zIndex(1)
             
             HStack(spacing: 0) {
                 WheelView(theWheel: wheelAnimFirst)

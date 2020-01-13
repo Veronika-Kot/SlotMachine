@@ -16,6 +16,8 @@ struct WheelView: View {
     
     @ObservedObject var theWheel = Wheel()
     
+    @EnvironmentObject var game: Game
+    
     
     var animation: Animation {
         Animation
@@ -33,7 +35,7 @@ struct WheelView: View {
                 Text("")}.frame(minHeight: 1, maxHeight: .infinity, alignment: .bottom).background(Color.white)
             
             VStack(spacing: 20) {
-                ForEach(cards, id: \.self) { card in
+                ForEach(game.cards, id: \.self) { card in
                     Image(card).resizable()
                         .frame(width: 60.0, height: 60.0)
                         .padding(.horizontal, 10)

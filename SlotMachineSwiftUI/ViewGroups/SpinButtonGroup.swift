@@ -9,10 +9,26 @@
 import SwiftUI
 
 struct SpinButtonGroup: View {
+    var wheel: WheelGroup
+    
+    init(wheel: WheelGroup) {
+        self.wheel = wheel
+    }
+    
     var body: some View {
         HStack {
             Button(action: {
-                print("Hello")
+                print("SPIN")
+                
+                 self.wheel.wheelAnimFirst.animate()
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                     self.wheel.wheelAnimSecond.animate()
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                     self.wheel.wheelAnimThird.animate()
+                }
             }){
                 ZStack {
                     Text("SPIN").font(Font.custom("ff", size: 30.0)).foregroundColor(Color.white)
@@ -55,8 +71,8 @@ struct SpinButtonGroup: View {
     }
 }
 
-struct SpinButtonGroup_Previews: PreviewProvider {
-    static var previews: some View {
-        SpinButtonGroup()
-    }
-}
+//struct SpinButtonGroup_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SpinButtonGroup()
+//    }
+//}

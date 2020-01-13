@@ -24,6 +24,7 @@
 		7BC3CB1D23CCE77C00541829 /* BankMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3CB1C23CCE77C00541829 /* BankMoney.swift */; };
 		7BC3CB1F23CCF33200541829 /* GameTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3CB1E23CCF33200541829 /* GameTitle.swift */; };
 		7BC3CB2123CCF53F00541829 /* Amilya.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BC3CB2023CCF51E00541829 /* Amilya.ttf */; };
+		7BC3CB2323CCFDFA00541829 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3CB2223CCFDFA00541829 /* Game.swift */; };
 		7BD1569923CAEC3A00001019 /* CardsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BD1569823CAEC3A00001019 /* CardsData.json */; };
 		7BD1569C23CB96A100001019 /* Wheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1569B23CB96A100001019 /* Wheel.swift */; };
 		7BD1569E23CC410C00001019 /* Calculator.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BD1569D23CC40FA00001019 /* Calculator.ttf */; };
@@ -49,6 +50,7 @@
 		7BC3CB1C23CCE77C00541829 /* BankMoney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankMoney.swift; sourceTree = "<group>"; };
 		7BC3CB1E23CCF33200541829 /* GameTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTitle.swift; sourceTree = "<group>"; };
 		7BC3CB2023CCF51E00541829 /* Amilya.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Amilya.ttf; sourceTree = "<group>"; };
+		7BC3CB2223CCFDFA00541829 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		7BD1569823CAEC3A00001019 /* CardsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CardsData.json; sourceTree = "<group>"; };
 		7BD1569B23CB96A100001019 /* Wheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wheel.swift; sourceTree = "<group>"; };
 		7BD1569D23CC40FA00001019 /* Calculator.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calculator.ttf; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				7BD1569B23CB96A100001019 /* Wheel.swift */,
+				7BC3CB2223CCFDFA00541829 /* Game.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				7B01E24D23C7132C00FA77CA /* SceneDelegate.swift in Sources */,
 				7BC3CB1F23CCF33200541829 /* GameTitle.swift in Sources */,
 				7B01E27C23C884D600FA77CA /* WheelGroup.swift in Sources */,
+				7BC3CB2323CCFDFA00541829 /* Game.swift in Sources */,
 				7B01E27E23C8855700FA77CA /* WheelView.swift in Sources */,
 				7B01E26023C7E16100FA77CA /* PrimaryButton.swift in Sources */,
 				7BC3CB1D23CCE77C00541829 /* BankMoney.swift in Sources */,

@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var wheel = WheelGroup()
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color("Silver"), Color("Silver"), Color("DarkSilver"), Color("DarkSilver"), Color("DarkSilver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"),  Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver")]), startPoint: .bottom, endPoint: .top)
@@ -56,7 +59,7 @@ struct ContentView: View {
                     
                     Spacer()
                     HStack() {
-                        WheelGroup().background(Color.white)
+                        self.wheel.background(Color.white)
                     }.padding(45)
                         .overlay(Rectangle().stroke(Color("LightGold"), lineWidth: 45))
                         .border(Color("LightGold"), width: 50)
@@ -84,7 +87,6 @@ struct ContentView: View {
                 
                 HStack(spacing: 0) {
                     CurrentBet()
-                    //===
                     VStack(){
                         
                         Text("5000")
@@ -104,9 +106,8 @@ struct ContentView: View {
                                 .fill(LinearGradient(gradient: Gradient(colors: [Color(red: 0.0, green: 0.0, blue: 0.0, opacity: 0.35), Color(red: 0.0, green: 0.0, blue: 0.0, opacity: 0.01)]), startPoint: .bottom, endPoint: .top))
                                 .frame(height: 55.0)
                             ,alignment: .bottom).cornerRadius(200, corners: [.bottomRight, .bottomLeft])
-                    
-                    //===
-                    SpinButtonGroup()
+
+                    SpinButtonGroup(wheel: self.wheel)
                 }
                 .zIndex(3)
                 .edgesIgnoringSafeArea(.all)
