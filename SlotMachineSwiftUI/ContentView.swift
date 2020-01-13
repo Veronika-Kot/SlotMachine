@@ -11,15 +11,39 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [Color("Silver"), Color("Silver"), Color("DarkSilver"), Color("DarkSilver"), Color("DarkSilver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"),  Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver")]), startPoint: .bottom, endPoint: .top).edgesIgnoringSafeArea(.all)
+            LinearGradient(gradient: Gradient(colors: [Color("Silver"), Color("Silver"), Color("DarkSilver"), Color("DarkSilver"), Color("DarkSilver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"),  Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver")]), startPoint: .bottom, endPoint: .top)
+                .edgesIgnoringSafeArea(.all)
             
             
             VStack(spacing: -35) {
                 HStack(){
+                    BankMoney()
+                        .offset(x: -15)
+                        .padding(.leading, 40)
                     Spacer()
-                    Text("Top Bar Menu")
+                    
+                    HStack {
+                        GameTitle().zIndex(10).offset(x: -15, y: 7)
+                    }
+                    
                     Spacer()
-                }.frame(height: 40).background(Color.blue).zIndex(2)
+                    
+                    Button(action: {
+                        print("Hello")
+                    }){
+                        Image(systemName: "arrow.clockwise").modifier(SecondaryButton())
+                    }
+                    
+                    Button(action: {
+                        print("Hello")
+                    }){
+                        Image(systemName: "xmark").modifier(SecondaryButton())
+                    }.padding(.trailing, 40)
+                    
+                    
+                }.frame(height: 45).background(
+                    LinearGradient(gradient: Gradient(colors: [Color("Silver"), Color("DarkSilver"), Color("DarkSilver"), Color("DarkSilver"), Color("Silver")]), startPoint: .bottom, endPoint: .top))
+                    .zIndex(2)
                     .edgesIgnoringSafeArea(.all)
                 
                 HStack(){
@@ -36,7 +60,7 @@ struct ContentView: View {
                     }.padding(45)
                         .overlay(Rectangle().stroke(Color("LightGold"), lineWidth: 45))
                         .border(Color("LightGold"), width: 50)
-                    
+                    Spacer()
                     Text("")
                         .frame(minWidth: 30,  maxWidth: 30, minHeight: 45,
                                maxHeight: .infinity, alignment: .trailing)
@@ -55,9 +79,9 @@ struct ContentView: View {
                 Text("")
                     .frame(minWidth: 0, idealWidth: .infinity, maxWidth: 45, minHeight: 45)
                     .background(Color("PrimaryBackground"))
-
+                    
                     .zIndex(2)
-
+                
                 HStack(spacing: 0) {
                     CurrentBet()
                     //===
