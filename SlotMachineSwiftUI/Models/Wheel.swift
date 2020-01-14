@@ -13,7 +13,6 @@ final class Wheel: ObservableObject {
     @Published private(set) var isSpinning: Bool = false
 
     func animate() {
-    
         isSpinning = !isSpinning
     }
 

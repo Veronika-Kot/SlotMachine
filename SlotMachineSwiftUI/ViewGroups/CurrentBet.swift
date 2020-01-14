@@ -9,11 +9,16 @@
 import SwiftUI
 
 struct CurrentBet: View {
+    
+    @EnvironmentObject var game: Game
+    
     var body: some View {
         HStack {
             ZStack {
-                Text("2525")
+                Text(String(self.game.bet))
                     .font(Font.custom("Calculator", size: 36.0))
+                    .shadow(color: Color("Red"), radius: 1, x: 1, y: 1)
+                    .shadow(color: Color("Red"), radius: 2, x: 1, y: 1)
                     .frame(width: 110.0)
                     .padding(.vertical, 5.0)
                     .padding(.horizontal, 5.0)
@@ -36,7 +41,8 @@ struct CurrentBet: View {
                     .cornerRadius(15)
                 HStack {
                     Button(action: {
-                        print("Hello")
+                        print("minus bet")
+                        self.game.deductBet()
                     }){
                         Image(systemName: "minus")
                             .modifier(PrimaryButton())
@@ -45,7 +51,8 @@ struct CurrentBet: View {
                     Text("").frame(width: 90.0)
                     
                     Button(action: {
-                        print("Hello")
+                        print("add bet")
+                        self.game.addBet()
                     }){
                         Image(systemName: "plus")
                             .modifier(PrimaryButton())

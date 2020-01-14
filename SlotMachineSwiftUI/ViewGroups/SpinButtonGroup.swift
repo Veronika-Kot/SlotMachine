@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct SpinButtonGroup: View {
+    
+    @EnvironmentObject var game: Game
+    
     var wheel: WheelGroup
     
     init(wheel: WheelGroup) {
@@ -18,16 +21,26 @@ struct SpinButtonGroup: View {
     var body: some View {
         HStack {
             Button(action: {
-                print("SPIN")
-                
-                 self.wheel.wheelAnimFirst.animate()
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                     self.wheel.wheelAnimSecond.animate()
-                }
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-                     self.wheel.wheelAnimThird.animate()
+                if self.game.notDisabled {
+                    
+                    print("SPIN")
+                    self.game.toggleCanSpin()
+                    self.game.spin()
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                        self.wheel.wheelAnimFirst.animate()
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                         self.wheel.wheelAnimSecond.animate()
+                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                         self.wheel.wheelAnimThird.animate()
+                    }
+        
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.9) {
+                         self.game.toggleCanSpin()
+                    }
                 }
             }){
                 ZStack {
@@ -52,8 +65,9 @@ struct SpinButtonGroup: View {
                     
                     .background(Color("Red"))
                     .cornerRadius(30)
-            }
-        } .frame(width: 275, height: 70.0)
+            }.disabled(!self.game.canSpin())
+        }
+        .frame(width: 275, height: 70.0)
             .padding(.top, 10.0)
             .padding(.leading, 20.0)
             .padding(.trailing, 10.0)

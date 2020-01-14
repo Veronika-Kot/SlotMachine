@@ -12,6 +12,8 @@ struct PrimaryButton: ViewModifier {
     
     func body(content: Content) -> some View {
         content
+            .shadow(color: Color("Silver"), radius: 1, x: 1, y: 1)
+        .shadow(color: Color("Silver"), radius: 1, x: -1, y: -1)
         .padding(.vertical, 17.0)
         .padding(.horizontal, 10.0)
         .overlay(

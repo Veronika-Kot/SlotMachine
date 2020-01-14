@@ -14,28 +14,14 @@ struct WheelGroup: View {
     @ObservedObject var wheelAnimSecond = Wheel()
     @ObservedObject var wheelAnimThird = Wheel()
     
+    @EnvironmentObject var game: Game
+    
     var body: some View {
-        ZStack {
-//            VStack {
-//                Button(action: {
-//                    self.wheelAnimFirst.animate()
-//                    
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-//                        self.wheelAnimSecond.animate()
-//                    }
-//                    
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-//                        self.wheelAnimThird.animate()
-//                    }
-//                }){
-//                    Text("Animate")
-//                }
-//            }.zIndex(1)
-            
+        ZStack {            
             HStack(spacing: 0) {
-                WheelView(theWheel: wheelAnimFirst)
-                WheelView(theWheel: wheelAnimSecond)
-                WheelView(theWheel: wheelAnimThird)
+                WheelView(aCards: game.cards1, aWheel: wheelAnimFirst)
+                WheelView(aCards: game.cards2, aWheel: wheelAnimSecond)
+                WheelView(aCards: game.cards3, aWheel: wheelAnimThird)
             }.frame(minHeight: 1, maxHeight: 163, alignment: .bottom)
                 .offset(y: 30)
                 .padding(.horizontal, 40)

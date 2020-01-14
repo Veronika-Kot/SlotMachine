@@ -19,33 +19,7 @@ struct ContentView: View {
             
             
             VStack(spacing: -35) {
-                HStack(){
-                    BankMoney()
-                        .offset(x: -15)
-                        .padding(.leading, 40)
-                    Spacer()
-                    
-                    HStack {
-                        GameTitle().zIndex(10).offset(x: -15, y: 7)
-                    }
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        print("Hello")
-                    }){
-                        Image(systemName: "arrow.clockwise").modifier(SecondaryButton())
-                    }
-                    
-                    Button(action: {
-                        print("Hello")
-                    }){
-                        Image(systemName: "xmark").modifier(SecondaryButton())
-                    }.padding(.trailing, 40)
-                    
-                    
-                }.frame(height: 45).background(
-                    LinearGradient(gradient: Gradient(colors: [Color("Silver"), Color("DarkSilver"), Color("DarkSilver"), Color("DarkSilver"), Color("Silver")]), startPoint: .bottom, endPoint: .top))
+                TopBar(wheel: self.wheel)
                     .zIndex(2)
                     .edgesIgnoringSafeArea(.all)
                 
@@ -76,8 +50,6 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.all)
                     .background(Color("LightGold"))
                 
-                
-                
                 Spacer()
                 Text("")
                     .frame(minWidth: 0, idealWidth: .infinity, maxWidth: 45, minHeight: 45)
@@ -92,11 +64,13 @@ struct ContentView: View {
                         Text("5000")
                             .font(Font.custom("Calculator", size: 50.0))
                             .foregroundColor(Color.yellow)
+                            .shadow(color: Color.yellow, radius: 2, x: 1, y: 1)
                             .offset(y: -10)
                         
                         Text("JACKPOT")
                             .font(Font.custom("Calculator", size: 22.0))
                             .foregroundColor(Color.yellow)
+                            .shadow(color: Color.yellow, radius: 2, x: 1, y: 1)
                             .offset(y: -10)
                         
                     }.frame(minWidth: 0, maxWidth: .infinity, maxHeight: 87)
@@ -111,8 +85,7 @@ struct ContentView: View {
                 }
                 .zIndex(3)
                 .edgesIgnoringSafeArea(.all)
-                
-                
+
             }
         }
     }

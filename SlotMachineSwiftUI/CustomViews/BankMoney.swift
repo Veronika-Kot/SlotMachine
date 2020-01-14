@@ -9,10 +9,13 @@
 import SwiftUI
 
 struct BankMoney: View {
+    @EnvironmentObject var game: Game
+    
     var body: some View {
         HStack(spacing: 0) {
             Text("$").font(.title)
                 .foregroundColor(Color.white)
+                .shadow(color: Color("Silver"), radius: 2, x: 1, y: 1)
                 .padding(10)
                 .background(Color.blue)
                 .clipShape(Circle())
@@ -20,8 +23,10 @@ struct BankMoney: View {
             .offset(x: 15)
                 .zIndex(2)
                 .shadow(color: Color("Gray"), radius: 2, x: 1, y: 1)
-            Text("1000").font(.headline)
+            Text(String(game.bank)).font(.headline)
+                    .frame(minWidth: 60)
                 .foregroundColor(Color.white)
+                .shadow(color: Color("Silver"), radius: 2, x: 1, y: 1)
                 .padding(5)
                 .padding(.horizontal, 7)
                 .padding(.leading, 10)
