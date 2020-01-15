@@ -30,6 +30,8 @@
 		7BD1569E23CC410C00001019 /* Calculator.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BD1569D23CC40FA00001019 /* Calculator.ttf */; };
 		7BDD9DF423CD56C5009813D7 /* RefreshGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD9DF323CD56C5009813D7 /* RefreshGame.swift */; };
 		7BDD9DF623CD9009009813D7 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD9DF523CD9009009813D7 /* TopBar.swift */; };
+		7BDD9DF823CD9267009813D7 /* RefreshGameModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD9DF723CD9266009813D7 /* RefreshGameModal.swift */; };
+		7BDD9DFA23CEBF8A009813D7 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD9DF923CEBF8A009813D7 /* Modal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		7BD1569D23CC40FA00001019 /* Calculator.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calculator.ttf; sourceTree = "<group>"; };
 		7BDD9DF323CD56C5009813D7 /* RefreshGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshGame.swift; sourceTree = "<group>"; };
 		7BDD9DF523CD9009009813D7 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
+		7BDD9DF723CD9266009813D7 /* RefreshGameModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshGameModal.swift; sourceTree = "<group>"; };
+		7BDD9DF923CEBF8A009813D7 /* Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 				7B01E27D23C8855700FA77CA /* WheelView.swift */,
 				7BC3CB1C23CCE77C00541829 /* BankMoney.swift */,
 				7BC3CB1E23CCF33200541829 /* GameTitle.swift */,
+				7BDD9DF723CD9266009813D7 /* RefreshGameModal.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			children = (
 				7BD1569B23CB96A100001019 /* Wheel.swift */,
 				7BC3CB2223CCFDFA00541829 /* Game.swift */,
+				7BDD9DF923CEBF8A009813D7 /* Modal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -248,7 +254,9 @@
 				7B01E24B23C7132C00FA77CA /* AppDelegate.swift in Sources */,
 				7BD1569C23CB96A100001019 /* Wheel.swift in Sources */,
 				7B01E26323C7E93200FA77CA /* CurrentBet.swift in Sources */,
+				7BDD9DFA23CEBF8A009813D7 /* Modal.swift in Sources */,
 				7B01E24D23C7132C00FA77CA /* SceneDelegate.swift in Sources */,
+				7BDD9DF823CD9267009813D7 /* RefreshGameModal.swift in Sources */,
 				7BC3CB1F23CCF33200541829 /* GameTitle.swift in Sources */,
 				7B01E27C23C884D600FA77CA /* WheelGroup.swift in Sources */,
 				7BC3CB2323CCFDFA00541829 /* Game.swift in Sources */,

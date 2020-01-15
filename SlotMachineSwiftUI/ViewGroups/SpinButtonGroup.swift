@@ -38,7 +38,7 @@ struct SpinButtonGroup: View {
                          self.wheel.wheelAnimThird.animate()
                     }
         
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.9) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.1) {
                          self.game.toggleCanSpin()
                     }
                 }

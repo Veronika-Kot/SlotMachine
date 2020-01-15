@@ -12,11 +12,13 @@ struct TopBar: View {
     
     
     @EnvironmentObject var game: Game
+    @ObservedObject var modal: Modal
     
     var wheel: WheelGroup
     
-    init(wheel: WheelGroup) {
+    init(wheel: WheelGroup, modal: Modal) {
         self.wheel = wheel
+        self.modal = modal
     }
     
     var body: some View {
@@ -35,18 +37,21 @@ struct TopBar: View {
             Spacer()
             
             Button(action: {
-                self.wheel.wheelAnimFirst.stopAnimating()
-                self.wheel.wheelAnimSecond.stopAnimating()
-                self.wheel.wheelAnimThird.stopAnimating()
+//                self.wheel.wheelAnimFirst.stopAnimating()
+//                self.wheel.wheelAnimSecond.stopAnimating()
+//                self.wheel.wheelAnimThird.stopAnimating()
+//
+//                self.game.restartGame()
                 
-                self.game.restartGame()
+                self.modal.showModal()
                 
             }){
                 Image(systemName: "arrow.clockwise").modifier(SecondaryButton())
             }
             
             Button(action: {
-                print("Hello")
+                self.modal.toggleQuitGame()
+                self.modal.showModal()
             }){
                 Image(systemName: "xmark").modifier(SecondaryButton())
             }.padding(.trailing, 40)

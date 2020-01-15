@@ -13,13 +13,12 @@ struct GameTitle: View {
         Text("Spin to Win").font(Font.custom("Amilya", size: 50.0)).foregroundColor(Color("Red"))
             .shadow(color: Color("Silver"), radius: 2, x: 1, y: 1)
             .shadow(color: Color("Silver"), radius: 3, x: 1, y: 1)
-//            .cornerRadius(10, corners: .bottomLeft)
-//            .cornerRadius(10, corners: .bottomRight)
             .padding(.horizontal, 20)
-//            .padding(.bottom, 5)
             .background(Color("PrimaryBackground"))
         .cornerRadius(40, corners: .bottomLeft)
         .cornerRadius(40, corners: .bottomRight)
+        .cornerRadius(10, corners: .topLeft)
+        .cornerRadius(10, corners: .topRight)
             
     }
 }

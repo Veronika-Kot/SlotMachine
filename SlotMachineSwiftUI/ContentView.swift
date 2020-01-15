@@ -10,18 +10,27 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var wheel = WheelGroup()
+    @ObservedObject var modal = Modal()
     
+    var wheel = WheelGroup()
+        
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color("Silver"), Color("Silver"), Color("DarkSilver"), Color("DarkSilver"), Color("DarkSilver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"),  Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver")]), startPoint: .bottom, endPoint: .top)
                 .edgesIgnoringSafeArea(.all)
             
+            if self.modal.isModalShown {
+                RefreshGameModal(wheel: self.wheel, modal: self.modal).zIndex(100)
+            }
+//            else {
+//                RefreshGameModal(wheel: self.wheel, modal: self.modal).hidden()
+//            }
             
             VStack(spacing: -35) {
-                TopBar(wheel: self.wheel)
+                TopBar(wheel: self.wheel, modal: self.modal)
                     .zIndex(2)
                     .edgesIgnoringSafeArea(.all)
+                    .shadow(color: Color("DarkGray"), radius: 3, x: 1, y: 2)
                 
                 HStack(){
                     Text("")
@@ -43,8 +52,6 @@ struct ContentView: View {
                                maxHeight: .infinity, alignment: .trailing)
                         .background(Color("PrimaryBackground")).padding()
                         .overlay(Rectangle().fill(Color("PrimaryBackground")).frame( width: 10), alignment: .leading)
-                    
-                    
                 }.offset(y: -10).zIndex(1)
                     .padding()
                     .edgesIgnoringSafeArea(.all)
@@ -54,7 +61,6 @@ struct ContentView: View {
                 Text("")
                     .frame(minWidth: 0, idealWidth: .infinity, maxWidth: 45, minHeight: 45)
                     .background(Color("PrimaryBackground"))
-                    
                     .zIndex(2)
                 
                 HStack(spacing: 0) {
