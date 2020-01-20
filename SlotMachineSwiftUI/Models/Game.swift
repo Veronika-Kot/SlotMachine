@@ -15,7 +15,18 @@ final class Game: ObservableObject {
     private var defaultCards: [String] =  ["banana", "cherry", "orange", "seven", "empty", "lemon", "empty", "bell", "empty", "grape", "empty", "cherry", "banana", "empty", "empty", "orange", "seven", "empty", "lemon", "bell", "grape", "cherry", "empty", "banana", "orange", "seven", "empty", "bell", "bell", "Spin-to-Win", "grape"]
     
     private var down: Bool = true
-
+    
+    private var grapes = 0;
+    private var bananas = 0;
+    private var oranges = 0;
+    private var cherries = 0;
+    private var lemons = 0;
+    private var bells = 0;
+    private var sevens = 0;
+    private var blanks = 0;
+    
+    private var m_gameMessage = ""
+    var m_winnings = 0
     
     @Published private(set) var cards1: [String]
     
@@ -27,7 +38,16 @@ final class Game: ObservableObject {
     
     @Published private(set) var bank = 1000
     
+    @Published private(set) var jackpot = 5000
+    
     @Published private(set) var notDisabled: Bool = true
+    
+    @Published private(set) var gameMessage: String = "SPIN"
+    
+    @Published private(set) var winnings: String = ""
+    
+    @Published private(set) var win: Bool = false
+    
     
     init() {
         self.cards1 = defaultCards
@@ -44,17 +64,29 @@ final class Game: ObservableObject {
         self.bank = 1000
         self.notDisabled = true
         self.down = true
+        self.gameMessage = "SPIN"
+        self.win = false
+        self.jackpot = 5000
     }
-        
+    
     func spin(){
         
+        print("**** inside spin")
         self.bank = self.bank - self.bet
-        cards1 = createNewStuck(oldCards: cards1)
-        cards2 = createNewStuck(oldCards: cards2)
-        cards3 = createNewStuck(oldCards: cards3)
         
+        self.gameMessage = ""
+        self.winnings = ""
+        
+        let betLine: [String] = Reels()
+        
+        
+        // Assign cards to wheels
+        cards1 = createNewStuck(oldCards: cards1, winCard: betLine[0])
+        cards2 = createNewStuck(oldCards: cards2, winCard: betLine[1])
+        cards3 = createNewStuck(oldCards: cards3, winCard: betLine[2])
+        
+        //Change direction
         down = !down
-        
     }
     
     func toggleCanSpin() {
@@ -77,7 +109,8 @@ final class Game: ObservableObject {
         }
     }
     
-    private func createNewStuck(oldCards: [String]) -> [String]{
+    /* Creates a random arrays of cards, assignes wincard to correct place*/
+    private func createNewStuck(oldCards: [String], winCard: String) -> [String]{
         var newCards = [String]()
         
         for _ in 0...30 {
@@ -89,21 +122,192 @@ final class Game: ObservableObject {
             newCards[30] = oldCards[30]
             newCards[29] = oldCards[29]
             newCards[28] = oldCards[28]
+            
+            newCards[1] = winCard
         } else {
             newCards[0] = oldCards[0]
             newCards[1] = oldCards[1]
             newCards[2] = oldCards[2]
+            
+            newCards[29] = winCard
         }
-
+        
         return newCards
     }
     
-    func Reels() {
+    /* Updates the bank money and displayed message */
+    func updateResults() {
+        
+        //Update Winnings
+        self.determineWinnings()
+        
+        self.gameMessage = self.m_gameMessage
+        self.winnings = String(m_winnings)
+        
+        print ("OLD bank \(self.bank)")
+        self.bank += m_winnings
+        print ("NEW bank \(self.bank)")
+        
+        if win {
+            checkJackPot()
+        }
+        
+        // Reset results
+        resetFruitTally()
+    }
+    
+    /* When this function is called it determines the betLine results.
+     e.g. Bar - Orange - Banana */
+    func Reels() -> [String] {
         var betLine = [" ", " ", " "]
         var outCome = [0, 0, 0]
         
         for wheel in 0...2 {
-            print(wheel)
+            outCome[wheel] = Int(floor(Float.random(in: 0 ..< 1) * 65) + 1)
+            switch outCome[wheel] {
+            case checkRange(outCome[wheel], 1, 27):
+                betLine[wheel] = "blank"
+                self.blanks += 1
+                break;
+            case checkRange(outCome[wheel], 28, 37):
+                betLine[wheel] = "grape"
+                self.grapes += 1
+                break;
+            case checkRange(outCome[wheel], 38, 46):
+                betLine[wheel] = "banana"
+                self.bananas += 1
+                break;
+            case checkRange(outCome[wheel], 47, 54):
+                betLine[wheel] = "orange"
+                self.oranges += 1
+                break;
+            case checkRange(outCome[wheel], 55, 59):
+                betLine[wheel] = "cherry"
+                self.cherries += 1
+                break;
+            case checkRange(outCome[wheel], 60, 62):
+                betLine[wheel] = "lemon"
+                self.lemons += 1
+                break;
+            case checkRange(outCome[wheel], 63, 64):
+                betLine[wheel] = "bell"
+                self.lemons += 1
+                break;
+            case checkRange(outCome[wheel], 65, 65):
+                betLine[wheel] = "seven"
+                self.sevens += 1
+                break;
+            default: break
+            }
+        }
+        print (betLine)
+        return betLine
+    }
+    
+    /* This function calculates the player's winnings, if any */
+    func determineWinnings()
+    {
+        if (blanks == 0)
+        {
+            if (grapes == 3) {
+                self.m_winnings = bet * 10;
+            }
+            else if(bananas == 3) {
+                self.m_winnings = bet * 20;
+            }
+            else if (oranges == 3) {
+                self.m_winnings = bet * 30;
+            }
+            else if (cherries == 3) {
+                self.m_winnings = bet * 40;
+            }
+            else if (lemons == 3) {
+                self.m_winnings = bet * 50;
+            }
+            else if (bells == 3) {
+                self.m_winnings = bet * 75;
+            }
+            else if (sevens == 3) {
+                self.m_winnings = bet * 100;
+            }
+            else if (grapes == 2) {
+                self.m_winnings = bet * 2;
+            }
+            else if (bananas == 2) {
+                self.m_winnings = bet * 2;
+            }
+            else if (oranges == 2) {
+                self.m_winnings = bet * 3;
+            }
+            else if (cherries == 2) {
+                self.m_winnings = bet * 4;
+            }
+            else if (lemons == 2) {
+                self.m_winnings = bet * 5;
+            }
+            else if (bells == 2) {
+                self.m_winnings = bet * 10;
+            }
+            else if (sevens == 2) {
+                self.m_winnings = bet * 20;
+            }
+            else if (sevens == 1) {
+                self.m_winnings = bet * 5;
+            }
+            else {
+                self.m_winnings = bet * 1;
+            }
+            
+            self.m_gameMessage = "WON"
+            self.win = true
+            
+            print("**** WON ***** \(self.m_winnings)")
+        }
+        else
+        {
+            self.m_gameMessage = "LOST"
+            self.win = false
+            
+             print("**** LOST ***** \(self.m_winnings)")
+        }
+        
+    }
+    
+    /* Utility function to check if a value falls within a range of bounds */
+    func checkRange(_ value: Int, _ lowerBounds: Int, _ upperBounds: Int) -> Int {
+        if (value >= lowerBounds && value <= upperBounds)
+        {
+            return value;
+        }
+        else {
+            return -100;
+        }
+    }
+    
+    /* Utility function to reset all fruit tallies */
+    func resetFruitTally() {
+        m_winnings = 0
+        
+        grapes = 0;
+        bananas = 0;
+        oranges = 0;
+        cherries = 0;
+        lemons = 0;
+        bells = 0;
+        sevens = 0;
+        blanks = 0;
+    }
+    
+    /* Check to see if the player won the jackpot */
+    func checkJackPot() {
+        /* compare two random values */
+        var jackPotTry = Int(floor(Float.random(in: 0 ..< 1) * 51) + 1)
+            
+        var jackPotWin = Int(floor(Float.random(in: 0 ..< 1) * 51) + 1)
+        if (jackPotTry == jackPotWin) {
+            print("You Won the $ \(jackpot) Jackpot!!");
+            self.bank += self.jackpot;
+            self.jackpot = 1000;
         }
     }
 }

@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var modal = Modal()
+    @EnvironmentObject var game: Game
     
     var wheel = WheelGroup()
         
@@ -68,7 +69,8 @@ struct ContentView: View {
                     CurrentBet()
                     VStack(){
                         
-                        Text("5000")
+                        Text(String(self.game.jackpot))
+                            .fixedSize(horizontal: true, vertical: true)
                             .font(Font.custom("Calculator", size: 50.0))
                             .foregroundColor(Color.yellow)
                             .shadow(color: Color.yellow, radius: 2, x: 1, y: 1)
