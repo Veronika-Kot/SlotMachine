@@ -12,7 +12,11 @@ import Combine
 final class Modal: ObservableObject {
     @Published private(set) var isModalShown: Bool = false
     @Published private(set) var isQuitGame: Bool = false
+    @Published private(set) var isThankYouModal: Bool = false
 
+    func toggleThankYouView() {
+        isThankYouModal = !isThankYouModal
+    }
     
     func toggleQuitGame() {
         isQuitGame = !isQuitGame

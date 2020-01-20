@@ -22,45 +22,40 @@ struct TopBar: View {
     }
     
     var body: some View {
-        HStack(){
+        HStack() {
             BankMoney()
                 .offset(x: -15)
                 .padding(.leading, 40)
             Spacer()
             
             HStack {
-                GameTitle().zIndex(10).offset(x: -10, y: 7)
-                .shadow(color: Color("DarkGray"), radius: 4, x: 2, y: 3)
-                .shadow(color: Color("DarkGray"), radius: 4, x: -2, y: 3)
+                GameTitle().zIndex(10).offset(x: -45, y: 7)
+                    .shadow(color: Color("DarkGray"), radius: 4, x: 2, y: 3)
+                    .shadow(color: Color("DarkGray"), radius: 4, x: -2, y: 3)
             }
             
             Spacer()
             
-            Button(action: {
-//                self.wheel.wheelAnimFirst.stopAnimating()
-//                self.wheel.wheelAnimSecond.stopAnimating()
-//                self.wheel.wheelAnimThird.stopAnimating()
-//
-//                self.game.restartGame()
+            HStack {
+                Button(action: {
+                    self.modal.showModal()
+                }){
+                    Image(systemName: "arrow.clockwise").modifier(SecondaryButton())
+                }
                 
-                self.modal.showModal()
+                Button(action: {
+                    self.modal.toggleQuitGame()
+                    self.modal.showModal()
+                }){
+                    Image(systemName: "xmark").modifier(SecondaryButton())
+                }
                 
-            }){
-                Image(systemName: "arrow.clockwise").modifier(SecondaryButton())
-            }
-            
-            Button(action: {
-                self.modal.toggleQuitGame()
-                self.modal.showModal()
-            }){
-                Image(systemName: "xmark").modifier(SecondaryButton())
-            }.padding(.trailing, 40)
-            
-            
+            }.offset(x: -45)
         }.frame(height: 45).background(
             LinearGradient(gradient: Gradient(colors: [Color("Silver"), Color("DarkSilver"), Color("DarkSilver"), Color("DarkSilver"), Color("Silver")]), startPoint: .bottom, endPoint: .top))
     }
 }
+//}
 
 //struct TopBar_Previews: PreviewProvider {
 //    static var previews: some View {

@@ -26,6 +26,7 @@ struct SpinButtonGroup: View {
                     print("SPIN")
                     self.game.toggleCanSpin()
                     self.game.spin()
+                    self.game.Reels()
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                         self.wheel.wheelAnimFirst.animate()
@@ -38,7 +39,7 @@ struct SpinButtonGroup: View {
                          self.wheel.wheelAnimThird.animate()
                     }
         
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.1) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
                          self.game.toggleCanSpin()
                     }
                 }
@@ -65,6 +66,9 @@ struct SpinButtonGroup: View {
                     
                     .background(Color("Red"))
                     .cornerRadius(30)
+                    .shadow(color: Color("DarkGray"), radius: 1, x: 1, y: -1)
+                    .shadow(color: Color("DarkRed"), radius: 2, x: -2, y: -3)
+                   
             }.disabled(!self.game.canSpin())
         }
         .frame(width: 275, height: 70.0)

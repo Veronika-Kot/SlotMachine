@@ -12,7 +12,7 @@ final class Game: ObservableObject {
     
     private var deck: [String] =  ["empty", "banana", "cherry", "orange", "bell", "seven", "grape", "lemon"]
     
-    private var defaultCards: [String] =  ["banana", "cherry", "orange", "seven", "empty", "lemon", "empty", "bell", "empty", "grape", "empty", "cherry", "banana", "empty", "empty", "orange", "seven", "empty", "lemon", "bell", "grape", "cherry", "empty", "banana", "orange", "seven", "empty", "bell", "grape", "bell", "cherry"]
+    private var defaultCards: [String] =  ["banana", "cherry", "orange", "seven", "empty", "lemon", "empty", "bell", "empty", "grape", "empty", "cherry", "banana", "empty", "empty", "orange", "seven", "empty", "lemon", "bell", "grape", "cherry", "empty", "banana", "orange", "seven", "empty", "bell", "bell", "Spin-to-Win", "grape"]
     
     private var down: Bool = true
 
@@ -94,8 +94,17 @@ final class Game: ObservableObject {
             newCards[1] = oldCards[1]
             newCards[2] = oldCards[2]
         }
-        
+
         return newCards
+    }
+    
+    func Reels() {
+        var betLine = [" ", " ", " "]
+        var outCome = [0, 0, 0]
+        
+        for wheel in 0...2 {
+            print(wheel)
+        }
     }
 }
 

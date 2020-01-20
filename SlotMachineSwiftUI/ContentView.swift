@@ -22,9 +22,10 @@ struct ContentView: View {
             if self.modal.isModalShown {
                 RefreshGameModal(wheel: self.wheel, modal: self.modal).zIndex(100)
             }
-//            else {
-//                RefreshGameModal(wheel: self.wheel, modal: self.modal).hidden()
-//            }
+            
+            if self.modal.isThankYouModal {
+                ThankYouView(wheel: self.wheel, modal: self.modal).zIndex(1000)
+            }
             
             VStack(spacing: -35) {
                 TopBar(wheel: self.wheel, modal: self.modal)
