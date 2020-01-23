@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 final class Game: ObservableObject {
     
@@ -26,8 +27,11 @@ final class Game: ObservableObject {
     private var blanks = 0;
     
     private var m_gameMessage = ""
-    var m_winnings = 0
+    private var m_winnings = 0
     
+    private var player: AVAudioPlayer?
+    
+    //Vars readable from UI
     @Published private(set) var cards1: [String]
     
     @Published private(set) var cards2: [String]
@@ -47,6 +51,8 @@ final class Game: ObservableObject {
     @Published private(set) var winnings: String = ""
     
     @Published private(set) var win: Bool = false
+    
+    @Published private(set) var winJackpot: Bool = false
     
     
     init() {
@@ -69,16 +75,35 @@ final class Game: ObservableObject {
         self.jackpot = 5000
     }
     
+    func hideJackpotSign() {
+        self.winJackpot = false
+    }
+    
+    /* Plays a passed sound effect */
+    func playSound(sound: String) {
+        let path = Bundle.main.path(forResource: sound, ofType:nil)!
+        
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        } catch {
+            // couldn't load file :(
+        }
+    }
+    
+    /* Executed when user press SPIN button */
     func spin(){
         
-        print("**** inside spin")
-        self.bank = self.bank - self.bet
+        playSound(sound: "348503__robinhood76__06708-slot-machine-coin-inserting.wav")
         
+
+        self.bank = self.bank - self.bet
         self.gameMessage = ""
         self.winnings = ""
         
         let betLine: [String] = Reels()
-        
         
         // Assign cards to wheels
         cards1 = createNewStuck(oldCards: cards1, winCard: betLine[0])
@@ -109,7 +134,7 @@ final class Game: ObservableObject {
         }
     }
     
-    /* Creates a random arrays of cards, assignes wincard to correct place*/
+    /* Creates a random arrays of cards, assignes wincard to correct place */
     private func createNewStuck(oldCards: [String], winCard: String) -> [String]{
         var newCards = [String]()
         
@@ -141,6 +166,11 @@ final class Game: ObservableObject {
         //Update Winnings
         self.determineWinnings()
         
+        if win {
+            playSound(sound: "69682__lukaso__coinwin.wav")
+            checkJackPot()
+        }
+        
         self.gameMessage = self.m_gameMessage
         self.winnings = String(m_winnings)
         
@@ -148,9 +178,7 @@ final class Game: ObservableObject {
         self.bank += m_winnings
         print ("NEW bank \(self.bank)")
         
-        if win {
-            checkJackPot()
-        }
+        print ("Show jackpot \(self.winJackpot)")
         
         // Reset results
         resetFruitTally()
@@ -166,7 +194,7 @@ final class Game: ObservableObject {
             outCome[wheel] = Int(floor(Float.random(in: 0 ..< 1) * 65) + 1)
             switch outCome[wheel] {
             case checkRange(outCome[wheel], 1, 27):
-                betLine[wheel] = "blank"
+                betLine[wheel] = "empty"
                 self.blanks += 1
                 break;
             case checkRange(outCome[wheel], 28, 37):
@@ -304,8 +332,10 @@ final class Game: ObservableObject {
         var jackPotTry = Int(floor(Float.random(in: 0 ..< 1) * 51) + 1)
             
         var jackPotWin = Int(floor(Float.random(in: 0 ..< 1) * 51) + 1)
-        if (jackPotTry == jackPotWin) {
+        if true {
+//        if (jackPotTry == jackPotWin) {
             print("You Won the $ \(jackpot) Jackpot!!");
+            self.winJackpot = true
             self.bank += self.jackpot;
             self.jackpot = 1000;
         }

@@ -20,6 +20,9 @@
 		7B01E27A23C86BFE00FA77CA /* SpinButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B01E27923C86BFE00FA77CA /* SpinButtonGroup.swift */; };
 		7B01E27C23C884D600FA77CA /* WheelGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B01E27B23C884D600FA77CA /* WheelGroup.swift */; };
 		7B01E27E23C8855700FA77CA /* WheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B01E27D23C8855700FA77CA /* WheelView.swift */; };
+		7B4C08C423D63362004A11CD /* 348503__robinhood76__06708-slot-machine-coin-inserting.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7B4C08C323D63362004A11CD /* 348503__robinhood76__06708-slot-machine-coin-inserting.wav */; };
+		7B4C08C623D635E8004A11CD /* 69682__lukaso__coinwin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7B4C08C523D635E8004A11CD /* 69682__lukaso__coinwin.wav */; };
+		7B4C08C823D66369004A11CD /* JackpotSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C08C723D66369004A11CD /* JackpotSign.swift */; };
 		7BC3CB1B23CCDA7800541829 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3CB1A23CCDA7800541829 /* SecondaryButton.swift */; };
 		7BC3CB1D23CCE77C00541829 /* BankMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3CB1C23CCE77C00541829 /* BankMoney.swift */; };
 		7BC3CB1F23CCF33200541829 /* GameTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3CB1E23CCF33200541829 /* GameTitle.swift */; };
@@ -50,6 +53,9 @@
 		7B01E27923C86BFE00FA77CA /* SpinButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinButtonGroup.swift; sourceTree = "<group>"; };
 		7B01E27B23C884D600FA77CA /* WheelGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelGroup.swift; sourceTree = "<group>"; };
 		7B01E27D23C8855700FA77CA /* WheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelView.swift; sourceTree = "<group>"; };
+		7B4C08C323D63362004A11CD /* 348503__robinhood76__06708-slot-machine-coin-inserting.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "348503__robinhood76__06708-slot-machine-coin-inserting.wav"; sourceTree = "<group>"; };
+		7B4C08C523D635E8004A11CD /* 69682__lukaso__coinwin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 69682__lukaso__coinwin.wav; sourceTree = "<group>"; };
+		7B4C08C723D66369004A11CD /* JackpotSign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackpotSign.swift; sourceTree = "<group>"; };
 		7BC3CB1A23CCDA7800541829 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		7BC3CB1C23CCE77C00541829 /* BankMoney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankMoney.swift; sourceTree = "<group>"; };
 		7BC3CB1E23CCF33200541829 /* GameTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTitle.swift; sourceTree = "<group>"; };
@@ -126,6 +132,7 @@
 				7B01E26923C82B5500FA77CA /* RoundedCorner.swift */,
 				7B01E27D23C8855700FA77CA /* WheelView.swift */,
 				7BC3CB1E23CCF33200541829 /* GameTitle.swift */,
+				7B4C08C723D66369004A11CD /* JackpotSign.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -157,6 +164,8 @@
 		7BD1569723CAEB8400001019 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7B4C08C523D635E8004A11CD /* 69682__lukaso__coinwin.wav */,
+				7B4C08C323D63362004A11CD /* 348503__robinhood76__06708-slot-machine-coin-inserting.wav */,
 				7B01E26423C7F00300FA77CA /* fonts */,
 			);
 			path = Resources;
@@ -231,11 +240,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BD1569E23CC410C00001019 /* Calculator.ttf in Resources */,
+				7B4C08C423D63362004A11CD /* 348503__robinhood76__06708-slot-machine-coin-inserting.wav in Resources */,
 				7B01E25723C7132E00FA77CA /* LaunchScreen.storyboard in Resources */,
 				7B01E25423C7132E00FA77CA /* Preview Assets.xcassets in Resources */,
 				7B01E27323C85B6600FA77CA /* TejaratchiCaps.ttf in Resources */,
 				7BC3CB2123CCF53F00541829 /* Amilya.ttf in Resources */,
 				7B01E25123C7132E00FA77CA /* Assets.xcassets in Resources */,
+				7B4C08C623D635E8004A11CD /* 69682__lukaso__coinwin.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BDD9DF423CD56C5009813D7 /* RefreshGame.swift in Sources */,
+				7B4C08C823D66369004A11CD /* JackpotSign.swift in Sources */,
 				7BC3CB1B23CCDA7800541829 /* SecondaryButton.swift in Sources */,
 				7B01E26A23C82B5500FA77CA /* RoundedCorner.swift in Sources */,
 				7B01E27A23C86BFE00FA77CA /* SpinButtonGroup.swift in Sources */,

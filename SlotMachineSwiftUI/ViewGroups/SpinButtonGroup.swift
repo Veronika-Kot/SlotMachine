@@ -78,6 +78,12 @@ struct SpinButtonGroup: View {
                         self.game.updateResults()
                         self.game.toggleCanSpin()
                     }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.8) {
+                        if self.game.winJackpot {
+                            self.game.hideJackpotSign()
+                        }
+                    }
                 }
             }){
                 ZStack {

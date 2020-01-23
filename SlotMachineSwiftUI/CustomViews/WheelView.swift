@@ -21,7 +21,6 @@ struct WheelView: View {
     var animation: Animation {
         Animation
             .interpolatingSpring(mass: 1.2, stiffness: 0.5, damping: 3.5, initialVelocity: 1)
-            //            .easeInOut(duration: 3.0)
             .speed(4.5).repeatCount(1, autoreverses: false)
     }
     

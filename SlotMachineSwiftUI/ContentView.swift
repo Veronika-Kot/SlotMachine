@@ -20,6 +20,9 @@ struct ContentView: View {
             LinearGradient(gradient: Gradient(colors: [Color("Silver"), Color("Silver"), Color("DarkSilver"), Color("DarkSilver"), Color("DarkSilver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"),  Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver"), Color("Silver")]), startPoint: .bottom, endPoint: .top)
                 .edgesIgnoringSafeArea(.all)
             
+
+            JackpotSign().zIndex(50)
+
             if self.modal.isModalShown {
                 RefreshGameModal(wheel: self.wheel, modal: self.modal).zIndex(100)
             }
