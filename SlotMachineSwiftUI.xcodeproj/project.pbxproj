@@ -30,7 +30,6 @@
 		7BC3CB2323CCFDFA00541829 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3CB2223CCFDFA00541829 /* Game.swift */; };
 		7BD1569C23CB96A100001019 /* Wheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1569B23CB96A100001019 /* Wheel.swift */; };
 		7BD1569E23CC410C00001019 /* Calculator.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BD1569D23CC40FA00001019 /* Calculator.ttf */; };
-		7BDD9DF423CD56C5009813D7 /* RefreshGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD9DF323CD56C5009813D7 /* RefreshGame.swift */; };
 		7BDD9DF623CD9009009813D7 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD9DF523CD9009009813D7 /* TopBar.swift */; };
 		7BDD9DF823CD9267009813D7 /* RefreshGameModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD9DF723CD9266009813D7 /* RefreshGameModal.swift */; };
 		7BDD9DFA23CEBF8A009813D7 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD9DF923CEBF8A009813D7 /* Modal.swift */; };
@@ -63,7 +62,6 @@
 		7BC3CB2223CCFDFA00541829 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		7BD1569B23CB96A100001019 /* Wheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wheel.swift; sourceTree = "<group>"; };
 		7BD1569D23CC40FA00001019 /* Calculator.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calculator.ttf; sourceTree = "<group>"; };
-		7BDD9DF323CD56C5009813D7 /* RefreshGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshGame.swift; sourceTree = "<group>"; };
 		7BDD9DF523CD9009009813D7 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		7BDD9DF723CD9266009813D7 /* RefreshGameModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshGameModal.swift; sourceTree = "<group>"; };
 		7BDD9DF923CEBF8A009813D7 /* Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 				7B01E26223C7E93200FA77CA /* CurrentBet.swift */,
 				7B01E27923C86BFE00FA77CA /* SpinButtonGroup.swift */,
 				7B01E27B23C884D600FA77CA /* WheelGroup.swift */,
-				7BDD9DF323CD56C5009813D7 /* RefreshGame.swift */,
 				7BDD9DF523CD9009009813D7 /* TopBar.swift */,
 				7BDD9DFB23CECEC1009813D7 /* ThankYouView.swift */,
 			);
@@ -257,7 +254,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BDD9DF423CD56C5009813D7 /* RefreshGame.swift in Sources */,
 				7B4C08C823D66369004A11CD /* JackpotSign.swift in Sources */,
 				7BC3CB1B23CCDA7800541829 /* SecondaryButton.swift in Sources */,
 				7B01E26A23C82B5500FA77CA /* RoundedCorner.swift in Sources */,

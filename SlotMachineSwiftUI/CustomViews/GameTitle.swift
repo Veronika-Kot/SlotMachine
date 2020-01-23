@@ -4,10 +4,11 @@
 //
 //  Created by Veronika Kotckovich on 1/13/20.
 //  Copyright © 2020 centennial. All rights reserved.
-//
+//  Student ID: 301067511
 
 import SwiftUI
 
+// Custom view for Game sign on the top  of the screen
 struct GameTitle: View {
     var body: some View {
         Text("Spin to Win").font(Font.custom("Amilya", size: 50.0)).foregroundColor(Color("Red"))

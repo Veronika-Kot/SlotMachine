@@ -4,10 +4,11 @@
 //
 //  Created by Veronika Kotckovich on 1/10/20.
 //  Copyright © 2020 centennial. All rights reserved.
-//
+//  Student ID: 301067511
 
 import SwiftUI
 
+// Custom view group, which combines 3 wheel views and adds an image-birder around
 struct WheelGroup: View {
     
     @ObservedObject var wheelAnimFirst = Wheel()

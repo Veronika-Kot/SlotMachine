@@ -4,10 +4,11 @@
 //
 //  Created by Veronika Kotckovich on 1/14/20.
 //  Copyright © 2020 centennial. All rights reserved.
-//
+//  Student ID: 301067511
 
 import SwiftUI
 
+// Custom view group for displaying thank you overlay, containes generic UI elements
 struct ThankYouView: View {
     
     @EnvironmentObject var game: Game

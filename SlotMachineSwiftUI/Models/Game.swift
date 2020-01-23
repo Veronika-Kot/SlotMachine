@@ -4,11 +4,15 @@
 //
 //  Created by Veronika Kotckovich on 1/13/20.
 //  Copyright © 2020 centennial. All rights reserved.
-//
+//  Student ID: 301067511
 
 import SwiftUI
 import AVFoundation
 
+// Observable and EnvironmentObject object, initiated in scene delegate and can be accessable from all
+// SwiftUI view files
+//
+//Used to store variables accessible from UI and have game logic
 final class Game: ObservableObject {
     
     private var deck: [String] =  ["empty", "banana", "cherry", "orange", "bell", "seven", "grape", "lemon"]
@@ -329,11 +333,11 @@ final class Game: ObservableObject {
     /* Check to see if the player won the jackpot */
     func checkJackPot() {
         /* compare two random values */
-        var jackPotTry = Int(floor(Float.random(in: 0 ..< 1) * 51) + 1)
-            
-        var jackPotWin = Int(floor(Float.random(in: 0 ..< 1) * 51) + 1)
-        if true {
-//        if (jackPotTry == jackPotWin) {
+        let jackPotTry = Int(floor(Float.random(in: 0 ..< 1) * 51) + 1)
+        let jackPotWin = Int(floor(Float.random(in: 0 ..< 1) * 51) + 1)
+        
+//        if true { //to test jackpot
+        if (jackPotTry == jackPotWin) {
             print("You Won the $ \(jackpot) Jackpot!!");
             self.winJackpot = true
             self.bank += self.jackpot;

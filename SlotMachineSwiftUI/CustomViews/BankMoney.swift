@@ -4,11 +4,14 @@
 //
 //  Created by Veronika Kotckovich on 1/13/20.
 //  Copyright © 2020 centennial. All rights reserved.
-//
+//  Student ID: 301067511
 
 import SwiftUI
 
+// Custom view for displaying user's remaining money, containes UI elements
 struct BankMoney: View {
+    
+    //instance of game object, initiated in SceneDelegate, for updating users remaining money
     @EnvironmentObject var game: Game
     
     var body: some View {

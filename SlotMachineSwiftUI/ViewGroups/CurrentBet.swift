@@ -4,18 +4,22 @@
 //
 //  Created by Veronika Kotckovich on 1/9/20.
 //  Copyright © 2020 centennial. All rights reserved.
-//
+//  Student ID: 301067511
 
 import SwiftUI
 
+// View group which containes UI elements for left bottom bar:
+// current bet buttons and sign, containes generic UI elements and
+// custome views (Primary buttons)
 struct CurrentBet: View {
     
+    //instance of game object, initiated in SceneDelegate, for updating bet value
     @EnvironmentObject var game: Game
     
     var body: some View {
         HStack {
             ZStack {
-                Text(String(self.game.bet))
+                Text(String(self.game.bet)) // Total bet text and UI rools
                     .font(Font.custom("Calculator", size: 36.0))
                     .shadow(color: Color("Red"), radius: 1, x: 1, y: 1)
                     .shadow(color: Color("Red"), radius: 2, x: 1, y: 1)
@@ -39,13 +43,14 @@ struct CurrentBet: View {
                             .frame(height: 20.0)
                         ,alignment: .bottom)
                     .cornerRadius(15)
-                HStack {
+               
+                HStack { //Horizontal stack for 2 button, for increasing / decreasing bet
                     Button(action: {
                         print("minus bet")
                         self.game.deductBet()
                     }){
                         Image(systemName: "minus")
-                            .modifier(PrimaryButton())
+                            .modifier(PrimaryButton()) //using my custom modifier, it containes all UI rools
                     }
                     
                     Text("").frame(width: 90.0)
@@ -55,16 +60,17 @@ struct CurrentBet: View {
                         self.game.addBet()
                     }){
                         Image(systemName: "plus")
-                            .modifier(PrimaryButton())
+                            .modifier(PrimaryButton()) //using my custom modifier, it containes all UI rools
                     }
                 }
             }
             
+            // Total bet label
             VStack {
                 Text("TOTAL").font(Font.custom("TejaratchiCaps", size: 24.0))
                 Text("Bet").font(Font.custom("TejaratchiCaps", size: 24.0))
             }
-        }
+        } // UI for left side bottom bar
         .frame(width: 275, height: 70.0)
         .padding(.top, 10.0)
         .padding(.leading, 20.0)

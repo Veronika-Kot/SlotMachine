@@ -4,10 +4,11 @@
 //
 //  Created by Veronika Kotckovich on 1/9/20.
 //  Copyright © 2020 centennial. All rights reserved.
-//
+//  Student ID: 301067511
 
 import SwiftUI
 
+// Custom modifier - containes UI rools for golden capsule shape buttons
 struct PrimaryButton: ViewModifier {
     
     func body(content: Content) -> some View {
@@ -35,6 +36,7 @@ struct PrimaryButton: ViewModifier {
     }
 }
 
+//Extra custom view to use for display above button in canvas
 struct PrevPrev: View {
 var body: some View {
     Button(action: {

@@ -4,20 +4,20 @@
 //
 //  Created by Veronika Kotckovich on 1/10/20.
 //  Copyright © 2020 centennial. All rights reserved.
-//
+//  Student ID: 301067511
 
 import SwiftUI
 
+// Custom view for a single wheel/reel, containes UI elements and animation
 struct WheelView: View {
-    //    @State var show = false
-    @State private var offset = 0.0
     
+    //Observable object - one for each insrance of wheel
     @ObservedObject var theWheel = Wheel()
     
-    @EnvironmentObject var game: Game
-    
+    //Array of fruits names
     var theCards: [String]
     
+    //Spring Animation
     var animation: Animation {
         Animation
             .interpolatingSpring(mass: 1.2, stiffness: 0.5, damping: 3.5, initialVelocity: 1)
@@ -33,7 +33,6 @@ struct WheelView: View {
     var body: some View {
         
         ZStack {
-            
             VStack {
                 Text("")}.frame(minHeight: 1, maxHeight: .infinity, alignment: .bottom).background(Color.white)
             
@@ -43,8 +42,9 @@ struct WheelView: View {
                         .frame(width: 60.0, height: 60.0)
                         .padding(.horizontal, 10)
                         .background(Color.white)
-                        .offset(y: self.theWheel.isSpinning ? 2240 : 0)
-                        .animation(self.animation)
+                        .offset(y: self.theWheel.isSpinning ? 2240 : 0) // changing offset for each image
+                                                                        // from 0 to 2240 and back
+                        .animation(self.animation)    // calling animation
                 }
             }.frame(minHeight: 1, maxHeight: .infinity, alignment: .bottom).background(Color.white)
             
@@ -59,9 +59,7 @@ struct WheelView: View {
                     .padding(8)
                     .border(Color.black, width: 10.0)
                     .padding(.bottom, 24)
-//                    .shadow(color: Color("DarkSilver"), radius: 5, x: -3, y: -3)
                     .offset(y: 160)
-                
                 
                 VStack(spacing: 0){
                     Text("")
@@ -71,31 +69,6 @@ struct WheelView: View {
                 
                 
             }.frame(minHeight: 1, maxHeight: .infinity, alignment: .bottom)
-            
-            
-//                        Button(action: {
-//                            if  !self.theWheel.isSpinning{
-//                                self.theWheel.animate()
-//                            } else {
-//                                self.theWheel.stopAnimating()
-//                            }
-//                        }){
-//                            Text("Animate")
-//                        }
-            
         }
-        //        .background(Color.black)
-    }
-    
-    func switchPokemon() {
-        self.offset += 1.0
     }
 }
-
-//struct WheelView_Previews: PreviewProvider {
-//    
-//    static var previews: some View {
-//        WheelView(aCards: <#[String]#>)
-//        //        .previewLayout(.fixed(width: 896, height: 414))
-//    }
-//}

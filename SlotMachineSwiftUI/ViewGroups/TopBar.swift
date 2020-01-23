@@ -4,14 +4,17 @@
 //
 //  Created by Veronika Kotckovich on 1/14/20.
 //  Copyright © 2020 centennial. All rights reserved.
-//
+//  Student ID: 301067511
 
 import SwiftUI
 
+// Custom view group for displaying top bar, containes generic UI elements and custome views (GameTitle, BankMoney...)
 struct TopBar: View {
     
-    
+    //instance of game object, initiated in SceneDelegate
     @EnvironmentObject var game: Game
+    
+    //Observable object which containes variables to show/hide modals
     @ObservedObject var modal: Modal
     
     var wheel: WheelGroup
@@ -38,14 +41,14 @@ struct TopBar: View {
             
             HStack {
                 Button(action: {
-                    self.modal.showModal()
+                    self.modal.showModal() // call to show modal
                 }){
                     Image(systemName: "arrow.clockwise").modifier(SecondaryButton())
                 }
                 
                 Button(action: {
-                    self.modal.toggleQuitGame()
-                    self.modal.showModal()
+                    self.modal.toggleQuitGame() //Use quit game labels in the modal
+                    self.modal.showModal() // call to show modal
                 }){
                     Image(systemName: "xmark").modifier(SecondaryButton())
                 }
@@ -55,10 +58,3 @@ struct TopBar: View {
             LinearGradient(gradient: Gradient(colors: [Color("Silver"), Color("DarkSilver"), Color("DarkSilver"), Color("DarkSilver"), Color("Silver")]), startPoint: .bottom, endPoint: .top))
     }
 }
-//}
-
-//struct TopBar_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TopBar()
-//    }
-//}

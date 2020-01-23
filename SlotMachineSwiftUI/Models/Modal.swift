@@ -4,10 +4,13 @@
 //
 //  Created by Veronika Kotckovich on 1/14/20.
 //  Copyright © 2020 centennial. All rights reserved.
-//
+//  Student ID: 301067511
 
 import SwiftUI
 import Combine
+
+//Observable object to store a boolean variables, to show or hide modal overlays
+//Thank you, restart and quit game overlays
 
 final class Modal: ObservableObject {
     @Published private(set) var isModalShown: Bool = false

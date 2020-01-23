@@ -4,10 +4,11 @@
 //
 //  Created by Veronika Kotckovich on 1/9/20.
 //  Copyright © 2020 centennial. All rights reserved.
-//
+//  Student ID: 301067511
 
 import SwiftUI
 
+// Custom shape - rectangle with 1-4 rounded corners
 struct RoundedCorner: Shape {
     var radius: CGFloat = .infinity
     var corners: UIRectCorner = .allCorners

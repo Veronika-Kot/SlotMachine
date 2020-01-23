@@ -4,10 +4,11 @@
 //
 //  Created by Veronika Kotckovich on 1/14/20.
 //  Copyright © 2020 centennial. All rights reserved.
-//
+//  Student ID: 301067511
 
 import SwiftUI
 
+// View which containes UI elements for Refresh / QUIT  game overlay modal
 struct RefreshGameModal: View {
     
     @EnvironmentObject var game: Game

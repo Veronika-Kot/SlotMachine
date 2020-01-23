@@ -4,10 +4,11 @@
 //
 //  Created by Veronika Kotckovich on 1/13/20.
 //  Copyright © 2020 centennial. All rights reserved.
-//
+//  Student ID: 301067511
 
 import SwiftUI
 
+// Custom modifier - containes UI rools for gray-rectangular buttons
 struct SecondaryButton: ViewModifier {
     func body(content: Content) -> some View {
         content
