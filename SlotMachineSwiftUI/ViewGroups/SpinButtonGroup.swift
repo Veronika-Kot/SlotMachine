@@ -86,7 +86,7 @@ struct SpinButtonGroup: View {
                         self.game.toggleCanSpin()
                     }
                     
-                    // Check for Jackpot when all other animations are done
+                    // If Jackpot sign is shown, hide it
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.8) {
                         if self.game.winJackpot {
                             self.game.hideJackpotSign()

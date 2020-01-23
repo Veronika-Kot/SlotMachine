@@ -65,6 +65,7 @@ final class Game: ObservableObject {
         self.cards3 = defaultCards
     }
     
+    /* Reseting game variables */
     func restartGame() {
         self.cards1 = defaultCards
         self.cards2 = defaultCards
@@ -79,6 +80,7 @@ final class Game: ObservableObject {
         self.jackpot = 5000
     }
     
+    /* Hides jackPot sign */
     func hideJackpotSign() {
         self.winJackpot = false
     }
